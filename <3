@@ -1,0 +1,46 @@
+import java.util.Scanner;//this imports the scanner so that we can give inputs.
+public class We
+{
+  public static void main(String[] args) 
+  {
+    Scanner scanner = new Scanner(System.in);
+
+    int input = scanner.nextInt();//here the input value is actually the int value we give for which we want a binary value.
+    int i=0;//the i value here is for the array as the index of array starts from 0 .
+    int Matrix[]=new int[100];//the 100 inside the int is the size of the array starting from 0 to 99.
+    
+    while(input!=0)//here in this case we want something to run the while case so we are taking input not equal to zero.even if we give input as 0 we get accurate answer only.
+                    //as below loop doesnt work, the next step is the for loop.. here i =0 so j becomes 0 , j is equals to 0 and than it gets printed into matrix[j].
+                      //here j is the index..so how does the answer show 0 ?? it is because if we dont declare any value the compiler automatically declares as 0 for int values.//hence we get 0.
+
+    {
+      Matrix[i]=input%2;//here first we are declaring the array's first index as 0,and then we are assigning the values in the array which will comply by the
+                          //input%2 case..here we are taking the remainder of the int value by 2...
+      input = input/2;//now we get the quotient which will give a new input value which again goes up and finds the remainder.
+      i++;//the i value gets incremented in each case so that the index value changes .
+
+    }//so basically this loop stops when input value becomes 0. 
+    /*here we do get the binary number but in reverse.
+    *for example
+    we need binary value of 5..
+    2|_5__---->let 5 be the input or the int value we give,and 2 is the number which we are doing the operation cuz binary numbers have base 2!
+     2 |_2__---->||remainder=1||,we get it because..in the above case we have 5,we need to check which multiple of 2 is closer to 5,4 is closer!so write the quotient down which is 2,now we will have a remainder 1 write it to the side.2*2+1=5.
+       2|_1__---->||remainder = 0||
+          |______||remainder =1|| 
+          our program give the binary value in reverse order ..if you want once print the value of Matrix[i] value now ull get binary value in reverse
+          so to avoid that we need to reverse it.
+   */
+
+    
+    for(int j = i;j>=0;j--)//here we are equating j value to i,the i value here is the last incremented value from the above while loop,
+    //so obv the j value should be greater than 0 cuz the index value cant go below 0
+    //and now the last number gets printed and it gets decremented and it gets printed and so on until the index value(j)is equals to 0.
+      System.out.print(" " + Matrix[j]);
+    }
+    //hope you understood <3!!
+
+
+
+    
+
+  }
